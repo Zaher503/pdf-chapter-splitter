@@ -21,16 +21,20 @@ pip install PyPDF2
 ## Usage
 ### Command Line Usage
 ```bash
-python pdf_chapter_splitter.py <input_pdf_path> [-o <output_directory>] [--no-sequence]
+python pdf_chapter_splitter.py <input_pdf_path> -o <output_directory> --no-sequence
 ```
 
-**Parameter Description:**
-*   `<input_pdf_path>`: **Required**. The full path to the PDF file you want to split.
-*   `-o <output_directory>`, `--output_dir <output_directory>`: **Optional**. Specifies the output directory for the split PDF files.
+**Parameter Description:** \
+**Required**:
+*   `<input_pdf_path>`: The full path to the PDF file you want to split.
+
+**Optional**
+
+*   `-o <output_directory>`, `--output_dir <output_directory>`: Specifies the output directory for the split PDF files.
     *   If this parameter is **not specified**, the script will create a new subfolder in the same directory as the `input_pdf_path`. This subfolder will be named after the input PDF file (without its extension), and all split chapter PDFs will be saved into this subfolder.
     *   **Example**: If `my_book.pdf` is in `/path/to/documents/`, and `-o` is not specified, the output directory will be `/path/to/documents/my_book/`.
-*   `--no-sequence`: **Optional**. A boolean flag. If this flag is included, the split files will **not** have sequential prefixes. By default, files will be prefixed with sequence numbers.
-*   `--level <depth>`: **Optional**. An integer. Specifies the level of bookmarks to process.
+*   `--no-sequence`: A boolean flag. If this flag is included, the split files will not have sequential prefixes. By default, files will be prefixed with sequence numbers.
+*   `--level <depth>`: An integer. Specifies the level of bookmarks to process.
     *   `1` (default): Only processes top-level bookmarks.
     *   `2`, `3`, etc.: Processes bookmarks up to the specified level.
     *   `0`: Processes all levels of bookmarks.
